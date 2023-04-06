@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex    ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/img/avionbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: rgba(240, 248, 255, 0.763);
+    width: 33%;
+    border-radius: 15px;
+    padding: 5px;
+    height: 40%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 15px, 15px, 15px , 0px;
+}
+
+.form {
+    height: 40%;
+    text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+button{
+    margin-top: 15px;
+    width: 20%;
+}
+
+a {
+    margin-top: 15px;
+}
+
+.bold {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 80%;
+    }
+
+    body{
+        background-image: url(/img/avionsm.jpg);
+    }
+}
+@media (max-width: 412px) {
+    body {
+        background-image: url(/img/aviossm.jpeg);
+    }
+}
