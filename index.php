@@ -26,8 +26,8 @@ if (isset($_POST['start']) && isset($_POST['end'])) {
     $dateEnd = $_POST['dateEnd'];
 
     //on creer les dates
-    $date = date_create("$dateStart, $start2");
-    $date2 = date_create("$dateEnd, $end2");
+    $date = date_create("$dateStart $start2");
+    $date2 = date_create("$dateEnd $end2");
 
     //on prépare le résultat pour les tests
     $duration = $date->diff($date2);
@@ -39,7 +39,7 @@ function calculate_flight_duration($duration)
     //on test si le resultat est négatif 
 
     if ($duration->invert == 1) {
-        return '>La date d arrivée ne peut pas etre antérieur à la date de depart.';
+        return 'La date d arrivée ne peut pas etre antérieur à la date de depart.';
 
         //on test la durée
     } else if ($duration->d > 0) {
@@ -84,7 +84,7 @@ function calculate_flight_duration($duration)
                 <li class="bold">TEMPS DE VOL</li>
                 <li><?= calculate_flight_duration($duration) ?></li>
             </ul>
-            <a href="fly.php">RETOUR</a>
+            <a href="index.php">RETOUR</a>
     </div>
 
 
@@ -92,7 +92,7 @@ function calculate_flight_duration($duration)
 <?php } else { ?>
 <h1>Calculateur de durée de Vol </h1>
     <div class='form'>
-        <form action="fly.php" method="post">
+        <form action="index.php" method="post">
             <label for="dateStart">Date de départ</label>
             <input type="date" name="dateStart" id="dateStart" required><br>
             <label for="start">Heure de Départ</label>
