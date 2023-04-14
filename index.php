@@ -26,8 +26,8 @@ if (isset($_POST['start']) && isset($_POST['end'])) {
     $dateEnd = $_POST['dateEnd'];
 
     //on creer les dates
-    $date = date_create("$dateStart $start2");
-    $date2 = date_create("$dateEnd $end2");
+    $date = new DateTime("$dateStart $start2");
+    $date2 = new DateTime("$dateEnd-$end2");
 
     //on prépare le résultat pour les tests
     $duration = $date->diff($date2);
